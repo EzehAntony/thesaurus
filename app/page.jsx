@@ -11,12 +11,11 @@ function splash() {
 
 
   useEffect(() => {
-    const redirectTimer = () => {
+
       setTimeout(() => {
         router.push("/home");
       }, 3000);
-    };
-  
+   
   }, []);
 
   return (

@@ -2,11 +2,15 @@
 
 import styles from "../../styles/word.module.css";
 import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 
 function word() {
-  const response = localStorage.getItem("word");
-  const data = JSON.parse(response);
-  console.log(data);
+  const [info, setInfo] = useState([]);
+  useEffect(() => {
+    const response = localStorage.getItem("word");
+    const data = JSON.parse(response);
+    setInfo(data);
+  }, []);
   const router = useRouter();
   return (
     <div className={styles.word}>
@@ -14,7 +18,7 @@ function word() {
         <img onClick={() => router.back("-1")} src="/downrrow.svg" alt="" />
       </header>
 
-      {data.map((e) => (
+      {info?.map((e) => (
         <>
           <div className={styles.main}>
             <h1>{e.word}</h1>
