@@ -1,0 +1,123 @@
+.home {
+  background: linear-gradient(120deg, white, white, #bebebe);
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.home header {
+  width: 100%;
+  height: 80px;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu div {
+  height: 3px;
+  width: 15px;
+  background-color: black;
+  margin: 2px 0;
+  border-radius: 20px;
+}
+
+.menu div:nth-of-type(1) {
+  margin-left: 10px;
+}
+.menu div:nth-of-type(2) {
+  margin-left: 5px;
+}
+
+.finder {
+  width: 200px;
+  margin-top: 100px;
+}
+
+.container {
+  width: 100%;
+  color: black;
+  margin: 20px 0 10px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.container h3 {
+  background: linear-gradient(90deg, #00ffcc, rgb(255, 0, 234));
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.container p:nth-of-type(1) {
+  max-width: 300px;
+  font-weight: 600;
+  color: #969696;
+  margin: 15px 0;
+}
+
+.container label {
+  height: 50px;
+  width: 90%;
+  border-radius: 5px;
+  display: flex;
+  position: relative;
+  align-items: center;
+}
+
+.container input {
+  height: 50px;
+  width: 100%;
+  background: linear-gradient(90deg, white, #6363633a);
+  border-radius: 5px;
+  border: 0;
+  box-shadow: 2px 2px 22px #0a0a0a71;
+  color: black;
+  font-size: 17px;
+  font-weight: 700;
+  background: linear-gradient(90deg, #00be98, rgb(126, 1, 252));
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  overflow-x: scroll;
+  padding: 0 40px;
+}
+
+.container img {
+  position: absolute;
+  padding-left: 15px;
+}
+
+.home button {
+  width: 90%;
+  height: 40px;
+  background-color: #171c5c;
+  color: white;
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: capitalize;
+  border: 0;
+  margin: 0 20px;
+}
+
+.history {
+  font-weight: 600;
+  color: #969696;
+  margin: 15px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.history img {
+  width: 20px;
+  margin-top: 8px;
+}

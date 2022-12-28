@@ -1,0 +1,22 @@
+.splash {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+
+.splash img {
+  width: 300px;
+}
+
+.splash p {
+  font-size: 40px;
+  padding: 20px 0;
+  background: linear-gradient(90deg, #00ffcc, rgb(255, 0, 234));
+  font-weight: 800;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
