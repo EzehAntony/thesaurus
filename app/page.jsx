@@ -9,18 +9,15 @@ import { useEffect } from "react";
 function splash() {
   const router = useRouter();
 
-  const redirectTimer = () => {
-    setTimeout(() => {
-      router.push("/home");
-    }, 3000);
-  };
 
   useEffect(() => {
-    if (document.readyState === "complete") {
-      redirectTimer();
-    } else {
-    }
-  }, [document.readyState]);
+    const redirectTimer = () => {
+      setTimeout(() => {
+        router.push("/home");
+      }, 3000);
+    };
+  
+  }, []);
 
   return (
     <div className={styles.splash}>
