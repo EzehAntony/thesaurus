@@ -28,6 +28,7 @@
 
 .main {
   width: 90%;
+  max-width: 800px;
   height: 150px;
   padding: 20px;
   border-radius: 10px;
@@ -61,6 +62,9 @@
 .box {
   width: 90%;
   margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
 }
 
 .box h1 {
@@ -115,4 +119,10 @@
 
 .box:nth-of-type(2) {
   margin-top: 180px;
+}
+
+@media (min-width: 800px) {
+  .word header img {
+    margin-left: 20px;
+  }
 }
