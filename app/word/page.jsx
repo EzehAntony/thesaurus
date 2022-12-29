@@ -9,6 +9,7 @@ function word() {
   useEffect(() => {
     const response = localStorage.getItem("word");
     const data = JSON.parse(response);
+    console.log(data);
     setInfo(data);
   }, []);
   const router = useRouter();
@@ -59,12 +60,12 @@ function word() {
             </>
           ))}
 
-          <div className={styles.box}>
+{/*           <div className={styles.box}>
             <h1>Origin</h1>
             <div className={styles.content}>
               <p>{e.origin}</p>
             </div>
-          </div>
+          </div> */}
         </>
       ))}
     </div>

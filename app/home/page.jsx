@@ -6,20 +6,40 @@ import axios from "axios";
 import { useRouter } from "next/navigation";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { ClapSpinner } from "react-spinners-kit";
 
 function home() {
+  const [loading, setLoading] = useState(false);
   const router = useRouter();
   const search = async (word) => {
     if (input !== "") {
+      setLoading(true);
       await axios(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
         .then((res) => {
+          setLoading(false);
           const stringRes = JSON.stringify(res.data);
           localStorage.setItem("word", stringRes);
           router.push("/word");
         })
-        .catch((err) => console.log(err));
+        .catch((err) => {
+          setLoading(false);
+          console.log(err);
+          if (err.response.data.title) {
+            if (err.response.data.title === "No Definitions Found") {
+              toast.warning("No Definitions Found", {
+                autoClose: 3000,
+                closeButton: false,
+              });
+            }
+          } else {
+            toast.warning("An unnexpected error occured", {
+              autoClose: 3000,
+              closeButton: false,
+            });
+          }
+        });
     } else {
-      toast.warning("Search for an actual word!", {
+      toast.error("Search for an actual word!", {
         closeButton: false,
         autoClose: 3000,
       });
@@ -49,10 +69,13 @@ function home() {
             type="text"
           />
         </label>
-      </div>
-      <button onClick={() => search(input)}>Search</button>
-      <div className={styles.history}>
-        <p>Show history</p> <img src="/downrrow.svg" alt="" />
+        <button onClick={() => search(input)}>
+          {!loading && "Search"}{" "}
+          {loading && <ClapSpinner frontColor="white" size={16} />}
+        </button>
+        <div className={styles.history}>
+          <p>Show history</p> <img src="/downrrow.svg" alt="" />
+        </div>
       </div>
       <ToastContainer />
     </div>
