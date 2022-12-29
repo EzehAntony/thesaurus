@@ -76,6 +76,7 @@
   position: relative;
   align-items: center;
   margin-bottom: 10px;
+  background: white;
 }
 
 .container input {

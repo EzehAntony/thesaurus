@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { ClapSpinner } from "react-spinners-kit";
+import Head from "next/head";
 
 function home() {
   const [loading, setLoading] = useState(false);
@@ -48,6 +49,11 @@ function home() {
   const [input, setInput] = useState("");
   return (
     <div className={styles.home}>
+      <Head>
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <link rel="icon" href="/favicon.ico" />
+        <meta name="theme-color" content="white" />
+      </Head>
       <header>
         <div className={styles.menu}>
           <div></div>

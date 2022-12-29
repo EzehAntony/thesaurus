@@ -3,6 +3,7 @@
 import styles from "../../styles/word.module.css";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import Head from "next/head";
 
 function word() {
   const [info, setInfo] = useState([]);
@@ -15,6 +16,12 @@ function word() {
   const router = useRouter();
   return (
     <div className={styles.word}>
+      <Head>
+       
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <link rel="icon" href="/favicon.ico" />
+        <meta name="theme-color" content="white" />
+      </Head>
       <header>
         <img onClick={() => router.back("-1")} src="/downrrow.svg" alt="" />
       </header>
@@ -60,7 +67,7 @@ function word() {
             </>
           ))}
 
-{/*           <div className={styles.box}>
+          {/*           <div className={styles.box}>
             <h1>Origin</h1>
             <div className={styles.content}>
               <p>{e.origin}</p>
